@@ -1,0 +1,6 @@
+language: scala
+sudo: false
+jdk:
+- oraclejdk8
+script:
+- sbt compile paradox:paradox $(if [[ "${TRAVIS_PULL_REQUEST}" == "false" && "${TRAVIS_BRANCH}" == "master" ]]; then echo "ghpagesPushSite"; fi)
