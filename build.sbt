@@ -10,8 +10,6 @@ git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
 com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
-siteSubdirName in Paradox := s"docs/${version.value}"
-
 includeFilter in Paradox := {
   new FileFilter{
     override def accept(file: File): Boolean = {
