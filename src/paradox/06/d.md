@@ -25,29 +25,39 @@ servers. First, we'll try to retrieve a record.
 
 [curl]: http://curl.haxx.se/
 
-    curl -i http://127.0.0.1:8080/record/my+file
+```sh
+curl -i http://127.0.0.1:8080/record/my+file
+```
 
 The `-i` tells it to print out the response headers. Curl does a GET
 by default; since there is no record by that or any other name it
 prints out the 404 response with our error message. We have to PUT
 something into storage.
 
-    echo "Ta daa" | curl -i http://127.0.0.1:8080/record/my+file -T -
+```sh
+echo "Ta daa" | curl -i http://127.0.0.1:8080/record/my+file -T -
+```
 
 Curl's option `-T` is for uploading files with a PUT, and the hyphen
 tells it to read the data piped in from echo. Now, we should have
 better luck with a GET request:
 
-    curl -i http://127.0.0.1:8080/record/my+file
+```sh
+curl -i http://127.0.0.1:8080/record/my+file
+```
 
 That worked, right? We should also be able to replace items:
 
-    echo "Ta daa 2" | curl -i http://127.0.0.1:8080/record/my+file -T -
-    curl -i http://127.0.0.1:8080/record/my+file
+```sh
+echo "Ta daa 2" | curl -i http://127.0.0.1:8080/record/my+file -T -
+curl -i http://127.0.0.1:8080/record/my+file
+```
 
 And lastly, test the method error message:
 
-    curl -i http://127.0.0.1:8080/record/my+file -X DELETE
+```sh
+curl -i http://127.0.0.1:8080/record/my+file -X DELETE
+```
 
 405 Method Not Allowed. But it's a shame, really. DELETE support would
 be easy to add. Why don't you give it a try?

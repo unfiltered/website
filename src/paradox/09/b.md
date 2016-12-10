@@ -22,7 +22,9 @@ Once authenticated you should see simple text questioning your
 preferences. Why is this? Well, you have yet to tell the server what
 you prefer. In your url bar, enter the address
 
-    http://localhost:8080/prefer?pref=kittens
+```text
+http://localhost:8080/prefer?pref=kittens
+```
 
 or whatever else you have a preference for. Now, every time you
 request `http://localhost:8080/` the server has remembered your
