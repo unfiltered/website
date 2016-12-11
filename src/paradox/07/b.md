@@ -32,7 +32,7 @@ typically, we do have requirements on our input.
 
 Things get more interesting when require parameters to be in a
 particular format. From here on out, we'll be working with
-*interpreters* in the `unfiltered.directive.data`
+*interpreters* in the @extref[`unfiltered.directives.data`](unidoc:unfiltered/directives/data/index)
 package. Interpreters define abstract operations on data; we can
 produce directives for a particular request parameter with `named`.
 
