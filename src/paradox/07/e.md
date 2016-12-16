@@ -5,7 +5,7 @@ A request that is mapped through a directive can produce either a
 failure or success response. Usually, this works the way you
 want. When a `PUT` request is received for an endpoint that only
 supports `POST`, the service can respond with a `405 MethodNotAllowed`
-status without inspecting parameters any request parameters.
+status without inspecting any request parameters.
 
 But among the request parameters themselves, it may be desirable to
 respond with multiple error messages when there are multiple
