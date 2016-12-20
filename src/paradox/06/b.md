@@ -73,5 +73,7 @@ negative.
 
 @@snip [ ](../../main/scala/06/b.scala) { #example7 }
 
-> The `&` extractor matches when the extractor to its left and right
-  match, in this case to require multiple parameters.
+@@@ note
+The `&` extractor matches when the extractor to its left and right
+match, in this case to require multiple parameters.
+@@@

@@ -13,11 +13,13 @@ interpreter once and use it many places.
 In the example above we explicitly reference and apply a single
 interpreter to parameters "a" and "b", responding with their sum.
 
-> Unclear on the summing step? Values `a` and `b` are both of the
-  iterable type `Option[Int]`. We join these with `++` forming a
-  sequence of integers that could be as long as 2 or as short as 0,
-  depending on the input. The `sum` method on this sequence does what
-  you'd expect, and finally we join with a string.
+@@@ note
+Unclear on the summing step? Values `a` and `b` are both of the
+iterable type `Option[Int]`. We join these with `++` forming a
+sequence of integers that could be as long as 2 or as short as 0,
+depending on the input. The `sum` method on this sequence does what
+you'd expect, and finally we join with a string.
+@@@
 
 ### Implicit Interpreters
 

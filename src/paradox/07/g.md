@@ -45,10 +45,12 @@ were submitted, without being affected by any interpreters. We can get
 this separately from our parameter directives, using the trusty old
 `Params` extractor.
 
-> Since we're just calling out snippets of the code, you won't be able
-  to copy and paste these into a console as you can with most sections
-  of this documentation. Feel free to play around with the template
-  project source though, that's what it's there for.
+@@@ note
+Since we're just calling out snippets of the code, you won't be able
+to copy and paste these into a console as you can with most sections
+of this documentation. Feel free to play around with the template
+project source though, that's what it's there for.
+@@@
 
 @@snip [ ](../../main/scala/07/g.scala) { #example1 }
 

@@ -44,11 +44,13 @@ an `in` request parameter is not present or not a valid int, the value
 is `None`. This is a directive, but it's still one that always
 produceses a `Success` result.
 
-> What about repeated parameters? The object `data.as.Int` is an
-  interpreter from `String` to `Int`, but in HTTP we model parameter
-  values as a sequence of strings. This gap is bridged by another
-  interpreter `data.as.String`, which chooses the first in the
-  sequence. It's applied implicitly when needed.
+@@@ note
+What about repeated parameters? The object `data.as.Int` is an
+interpreter from `String` to `Int`, but in HTTP we model parameter
+values as a sequence of strings. This gap is bridged by another
+interpreter `data.as.String`, which chooses the first in the
+sequence. It's applied implicitly when needed.
+@@@
 
 We can transform an interpreter that ignores failed interpretation
 into one that produces a failure response by passing an error handler

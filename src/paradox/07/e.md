@@ -42,12 +42,14 @@ the same type. This allows the toolkit to combine many BadParam
 instances into a single error response, using the response function
 defined on any one of the instances.
 
-> The type system guarantees that error messages are of the same type
-  and that any instance can produce a response from them, but it is
-  not guaranteed which instance's error handler will be used to
-  produce the error response. You should use the same case class, or
-  the same error handling function, for all of your response error
-  instances.
+@@@ note
+The type system guarantees that error messages are of the same type
+and that any instance can produce a response from them, but it is
+not guaranteed which instance's error handler will be used to
+produce the error response. You should use the same case class, or
+the same error handling function, for all of your response error
+instances.
+@@@
 
 We can redefine "required" with this improved error responder.
 

@@ -7,10 +7,11 @@ function mapping from requests to a `Result`. We compose this function
 with another, which produces the standard intent function understood
 by Unfiltered.
 
-> Directives are an example of an Unfiltered
-> @ref:[kit](../08/b.md), set of tools providing a higher
-> level of abstraction over the core library.
-
+@@@ note
+Directives are an example of an Unfiltered
+@ref:[kit](../08/b.md), set of tools providing a higher
+level of abstraction over the core library.
+@@@
 
 ### Selective enforcement
 
