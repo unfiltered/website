@@ -22,7 +22,7 @@ includeFilter in Paradox := {
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-version := "0.9.0-beta2"
+version := "0.9.0"
 
 paradoxProperties in Paradox ++= Map(
   "version" -> version.value,
