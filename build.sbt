@@ -10,16 +10,6 @@ git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
 com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
-includeFilter in Paradox := {
-  new FileFilter{
-    override def accept(file: File): Boolean = {
-      // sbt-site and/or paradox bug?
-      // TODO better way
-      !file.getCanonicalPath.contains("target/paradox/paradox")
-    }
-  }
-}
-
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
 version := "0.9.1"
