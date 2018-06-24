@@ -12,7 +12,7 @@ com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-version := "0.9.1"
+version := "0.10.0-M1"
 
 paradoxProperties in Paradox ++= Map(
   "version" -> version.value,
@@ -30,10 +30,9 @@ libraryDependencies ++= Seq(
   "filter-uploads",
   "specs2",
   "scalatest",
-  "oauth2",
-  "oauth",
   "filter-async",
   "agents",
+  "directives",
   "json4s"
 ).map{ m =>
   "ws.unfiltered" %% s"unfiltered-${m}" % version.value
