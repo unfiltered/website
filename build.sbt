@@ -41,17 +41,14 @@ libraryDependencies ++= Seq(
 paradoxTheme := Some(builtinParadoxTheme("generic"))
 
 scalacOptions ++=
-  Seq("-Xcheckinit", "-encoding", "utf8", "-deprecation", "-unchecked", "-feature", "-Ywarn-adapted-args")
+  Seq("-Xcheckinit", "-encoding", "utf8", "-deprecation", "-unchecked", "-feature")
 
 val unusedWarnings = (
-  "-Ywarn-unused" ::
-  "-Ywarn-unused-import" ::
+  "-Ywarn-unused:imports" ::
   Nil
 )
 
-scalacOptions ++= PartialFunction.condOpt(CrossVersion.partialVersion(scalaVersion.value)){
-  case Some((2, v)) if v >= 11 => unusedWarnings
-}.toList.flatten
+scalacOptions ++= unusedWarnings
 
 Seq(Compile, Test).flatMap(c =>
   scalacOptions in (c, console) --= unusedWarnings
