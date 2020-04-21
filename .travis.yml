@@ -7,3 +7,11 @@ script:
 env:
   global:
     secure: k1BNrozNSA2XmzAbo5mCkrT6Zy9DkQGcn3UuEDuYHwY5GxVFXkXz2kHlnLaPSkakFWS1zvKzHgsVVJCaeJ3/4+oBYILuAwOezZCGiCXCocX39pq/l4QI9t3ZTQ4nPnqh9+cVYLfVVKI9CYJpg4H/72tQ3/urlui7gxOSsPptUYNYww38MzWBIl2GqLtbdPjlmMUfGJViYeRZBZ98VXAy2CvmqvLg26eDKdVxWXdDqdcO/WxzT5kgiBREL9TKE9fJS4poIgjOinDJAVSpQ9759yUxqCRkXAxb8Ul0b0I8YAuTh7TX/bE/S8v7ANRRmxP6ZS9MTwnj5jjPBxxbq0XiBTkiv8xI3sGaPRYg6Q7h9M6GGh8cJVU8nVKMMeU5lfVbq9hYcRQtQqR6wfeglv191DQdOuv4kGdruuCEceICzxqWUwB8PeAw3C5UjTrSWje+g0g5ozdYdG8GqoYFHPaEgGse8n2HBY589a+xihr/Wlj3WV/1oSSeuQeyp0YpkVCRJ26ZtZVe7PEpoPus1MbF9h3PE21+cK555yFOHTk8UtMoRu1L585Oep3vS0jhNrXETdF4bAtDbScXkaDk7+9lpiAT1ARQSiDn/D8pT+o415wxtkx+BkOwziyZ8VO104zLvMnjJy76otqGJw/EGJOIDSbTrz66SBJ9PUX5/SPCgJs=
+cache:
+  directories:
+    - "$HOME/.ivy2/cache"
+    - "$HOME/.sbt/launchers"
+    - "$HOME/.cache/coursier/v1"
+before_cache:
+  - find $HOME/.ivy2/cache -name "ivydata-*.properties" | xargs rm
+  - find $HOME/.ivy2/cache -name "*SNAPSHOT*" | xargs rm -rf
