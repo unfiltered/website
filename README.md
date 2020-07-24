@@ -1,4 +1,4 @@
-# Unfiltered Website [![Build Status](https://travis-ci.org/unfiltered/website.svg?branch=master)](https://travis-ci.org/unfiltered/website)
+# Unfiltered Website [![Build Status](https://travis-ci.com/unfiltered/website.svg?branch=master)](https://travis-ci.com/unfiltered/website)
 
 see [Paradox documentation](http://developer.lightbend.com/docs/paradox/latest/)
 
