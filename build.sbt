@@ -12,7 +12,7 @@ com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-val unfilteredVersion = "0.10.0-M8"
+val unfilteredVersion = "0.10.0-M11"
 
 paradoxProperties in Paradox ++= Map(
   "version" -> unfilteredVersion,
@@ -23,6 +23,8 @@ paradoxProperties in Paradox ++= Map(
     s"${sonatype}/ws/unfiltered/${artifactId}/${unfilteredVersion}/${artifactId}-${unfilteredVersion}-javadoc.jar/!/%s.html"
   }
 )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.3"
 
 libraryDependencies ++= Seq(
   "netty-uploads",
