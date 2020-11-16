@@ -1,6 +1,8 @@
 package example12
 
 import org.scalatest._
+import org.scalatest.featurespec._
+import org.scalatest.matchers.should._
 
 class App extends unfiltered.filter.Plan {
   import unfiltered.directives._, Directives._
@@ -14,7 +16,7 @@ class App extends unfiltered.filter.Plan {
 }
 
 // #example1
-class ExampleFeature extends FeatureSpec with unfiltered.scalatest.jetty.Served
+class ExampleFeature extends AnyFeatureSpec with unfiltered.scalatest.jetty.Served
                                               with unfiltered.scalatest.Hosted
                                               with GivenWhenThen with Matchers {
 
@@ -22,8 +24,8 @@ class ExampleFeature extends FeatureSpec with unfiltered.scalatest.jetty.Served
     _.plan(new App)
   }
 
-  feature("rest app") {
-    scenario("should validate integers") {
+  Feature("rest app") {
+    Scenario("should validate integers") {
       Given("an invalid int and a valid palindrome as parameters")
         val params = Map("int" -> "x", "palindrome" -> "twistsiwt")
       When("parameters are posted")
@@ -34,7 +36,7 @@ class ExampleFeature extends FeatureSpec with unfiltered.scalatest.jetty.Served
         response.as_string should include("x is not an integer")
     }
 
-    scenario("should validate palindrome") {
+    Scenario("should validate palindrome") {
       Given("a valid int and an invalid palindrome as parameters")
         val params = Map("int" -> "1", "palindrome" -> "sweets")
       When("parameters are posted")
