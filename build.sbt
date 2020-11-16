@@ -12,16 +12,15 @@ com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-version := "0.10.0-M8"
+val unfilteredVersion = "0.10.0-M8"
 
 paradoxProperties in Paradox ++= Map(
-  "version" -> version.value,
+  "version" -> unfilteredVersion,
   "extref.unidoc.base_url" -> {
     // can't use @scaladoc due to https://github.com/lightbend/paradox/pull/77
     val sonatype = "https://oss.sonatype.org/service/local/repositories/releases/archive"
     val artifactId = "unfiltered-all_2.12"
-    val v = version.value
-    s"${sonatype}/ws/unfiltered/${artifactId}/${v}/${artifactId}-${v}-javadoc.jar/!/%s.html"
+    s"${sonatype}/ws/unfiltered/${artifactId}/${unfilteredVersion}/${artifactId}-${unfilteredVersion}-javadoc.jar/!/%s.html"
   }
 )
 
@@ -35,7 +34,7 @@ libraryDependencies ++= Seq(
   "directives",
   "json4s"
 ).map{ m =>
-  "ws.unfiltered" %% s"unfiltered-${m}" % version.value
+  "ws.unfiltered" %% s"unfiltered-${m}" % unfilteredVersion
 }
 
 paradoxTheme := Some(builtinParadoxTheme("generic"))
