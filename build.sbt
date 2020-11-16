@@ -12,7 +12,9 @@ com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-val unfilteredVersion = "0.10.0-M11"
+def unfilteredVersion = "0.10.0-M11"
+
+version := unfilteredVersion
 
 paradoxProperties in Paradox ++= Map(
   "version" -> unfilteredVersion,
