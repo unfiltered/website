@@ -4,7 +4,7 @@ enablePlugins(ParadoxSitePlugin)
 
 enablePlugins(GhpagesPlugin)
 
-scalaVersion := "2.13.3"
+scalaVersion := "2.13.4"
 
 git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
@@ -21,7 +21,7 @@ paradoxProperties in Paradox ++= Map(
   "extref.unidoc.base_url" -> {
     // can't use @scaladoc due to https://github.com/lightbend/paradox/pull/77
     val sonatype = "https://oss.sonatype.org/service/local/repositories/releases/archive"
-    val artifactId = "unfiltered-all_2.12"
+    val artifactId = "unfiltered-all_2.13"
     s"${sonatype}/ws/unfiltered/${artifactId}/${unfilteredVersion}/${artifactId}-${unfilteredVersion}-javadoc.jar/!/%s.html"
   }
 )
