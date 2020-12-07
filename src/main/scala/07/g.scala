@@ -5,7 +5,7 @@ import unfiltered.directives._, Directives._
 
 object g {
 
-def view(p: Map[String, Seq[String]])(html: scala.xml.Elem) = ???
+def view(p: collection.Map[String, Seq[String]])(html: scala.xml.Elem) = ???
 
 new unfiltered.filter.Planify({
 // #example1
