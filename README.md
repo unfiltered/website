@@ -1,6 +1,6 @@
 # Unfiltered Website
 
-see [Paradox documentation](http://developer.lightbend.com/docs/paradox/latest/)
+see [Paradox documentation](https://developer.lightbend.com/docs/paradox/current/)
 
 Do **NOT** run `sbt ghpagesPushSite` from your local.
 
