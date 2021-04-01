@@ -26,7 +26,7 @@ paradoxProperties in Paradox ++= Map(
   }
 )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.6"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.7"
 
 libraryDependencies ++= Seq(
   "netty-uploads",
