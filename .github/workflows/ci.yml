@@ -17,7 +17,7 @@ jobs:
     - run: sbt -v compile paradox:paradox
     - run: sudo apt-get install tree
     - run: tree target
-    - uses: webfactory/ssh-agent@v0.5.1
+    - uses: webfactory/ssh-agent@v0.5.2
       if: ${{ !github.event.repository.fork && github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
         ssh-private-key: ${{ secrets.DEPLOY_KEY_1 }}
