@@ -16,7 +16,7 @@ def unfilteredVersion = "0.10.4"
 
 version := unfilteredVersion
 
-paradoxProperties in Paradox ++= Map(
+Paradox / paradoxProperties ++= Map(
   "version" -> unfilteredVersion,
   "extref.unidoc.base_url" -> {
     // can't use @scaladoc due to https://github.com/lightbend/paradox/pull/77
