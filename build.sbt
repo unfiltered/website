@@ -28,6 +28,8 @@ paradoxProperties in Paradox ++= Map(
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11"
 
+libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % "always"
+
 libraryDependencies ++= Seq(
   "netty-uploads",
   "filter-uploads",
