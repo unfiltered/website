@@ -8,6 +8,7 @@ jobs:
   test:
     timeout-minutes: 30
     runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'unfiltered' }}
     steps:
     - uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b # v3.9.0
       with:
@@ -19,11 +20,11 @@ jobs:
     - run: sudo apt-get install tree
     - run: tree target
     - uses: webfactory/ssh-agent@v0.7.0
-      if: ${{ !github.event.repository.fork && github.ref == 'refs/heads/master' && github.event_name == 'push' }}
+      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
         ssh-private-key: ${{ secrets.DEPLOY_KEY_1 }}
     - name: Push to gh-pages
-      if: ${{ !github.event.repository.fork && github.ref == 'refs/heads/master' && github.event_name == 'push' }}
+      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       run: |
         git config --global user.email "74865306+unfiltered-app[bot]@users.noreply.github.com"
         git config --global user.name "unfiltered-app[bot]"
