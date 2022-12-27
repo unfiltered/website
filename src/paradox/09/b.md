@@ -4,7 +4,7 @@ Remembrance of Things Past
 Basic authentication is a lightweight solution to general
 authentication, but what if we need to remember a little more
 information about a user's session? That's where
-[cookies](http://en.wikipedia.org/wiki/HTTP_cookie) come in.
+[cookies](https://en.wikipedia.org/wiki/HTTP_cookie) come in.
 
 Let's build on our authenticated application and add support for simple cookie handling.
 

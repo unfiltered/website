@@ -23,7 +23,7 @@ interface, for safety. SillyStore is not quite "web-scale".
 The command line utility [cURL][curl] is great for testing HTTP
 servers. First, we'll try to retrieve a record.
 
-[curl]: http://curl.haxx.se/
+[curl]: https://curl.se
 
 ```sh
 curl -i http://127.0.0.1:8080/record/my+file

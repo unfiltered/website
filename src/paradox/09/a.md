@@ -7,7 +7,7 @@ credentials are transferred as an unencrypted request header, so
 applications should secure both credentials and message bodies by
 requiring HTTPS for any protected resources.
 
-[basic]: http://en.wikipedia.org/wiki/Basic_access_authentication
+[basic]: https://en.wikipedia.org/wiki/Basic_access_authentication
 
 Below, we define a *kit* that extracts a username and password via
 basic HTTP authentication and verifies those credentials before

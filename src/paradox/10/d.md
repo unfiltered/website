@@ -21,7 +21,7 @@ milliseconds it could take to perform that request.
 Google has a [secret][weather] weather API. Let's use that until
 they take it offline.
 
-[weather]: http://blog.programmableweb.com/2010/02/08/googles-secret-weather-api/
+[weather]: https://www.programmableweb.com/news/googles-secret-weather-api/2010/02/08
 
 ```scala
 import dispatch._

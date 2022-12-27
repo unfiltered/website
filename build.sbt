@@ -10,7 +10,7 @@ git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
 com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
-licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
+licenses := Seq("MIT" -> url("https://www.opensource.org/licenses/MIT"))
 
 def unfilteredVersion = "0.12.0"
 
