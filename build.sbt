@@ -12,7 +12,7 @@ com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("http://www.opensource.org/licenses/MIT"))
 
-def unfilteredVersion = "0.10.4"
+def unfilteredVersion = "0.12.0"
 
 version := unfilteredVersion
 

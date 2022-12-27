@@ -1,6 +1,6 @@
 object Example11 {
 
-def myPlan: javax.servlet.Filter = ???
+def myPlan: jakarta.servlet.Filter = ???
 
 // #example1
 import unfiltered.jetty.ContextAdder
@@ -15,7 +15,13 @@ unfiltered.jetty.Server.http(8080).
 
 
 // #example2
-unfiltered.jetty.Server.http(8080).plan(myPlan).requestLogging("/tmp/access.log").run()
+unfiltered.jetty.Server.http(8080)
+  .plan(myPlan)
+  .requestLogging(
+    filename = "/tmp/access.log",
+    format = "some log format"
+  )
+  .run()
 // #example2
 
 }
