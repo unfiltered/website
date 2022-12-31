@@ -59,7 +59,7 @@ object Neg extends Params.Extract(
 )
 val intEcho = unfiltered.filter.Planify {
   case Params(Pos(pos) & Neg(neg)) =>
-    ResponseString("%d %d".format(pos,neg))
+    ResponseString(s"${pos} ${neg}")
 }
 unfiltered.jetty.Server.anylocal.plan(intEcho).run()
 // #example7

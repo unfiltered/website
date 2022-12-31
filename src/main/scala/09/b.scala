@@ -16,7 +16,7 @@ unfiltered.filter.Plan {
     case Path("/") & Cookies(cookies) =>
       ResponseString(cookies("pref") match {
         case Some(c: Cookie) =>
-          "you pref %s, don't you?" format c.value
+          s"you pref ${c.value}, don't you?"
         case _ => "no preference?"
       })
     case Path("/prefer") & Params(p) =>
