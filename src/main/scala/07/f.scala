@@ -35,7 +35,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
       for {
         even <- evenInt named "even"
       } yield ResponseString(
-        even + "\n"
+        even.toString + "\n"
       )
   } }
 ).run()
@@ -66,7 +66,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
       for {
         tool <- data.as.Option[Tool] named "id"
       } yield ResponseString(
-        tool + "\n"
+        tool.toString + "\n"
       )
   } }
 ).run()

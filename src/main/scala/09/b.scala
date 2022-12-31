@@ -41,7 +41,7 @@ val binding = SocketPortBinding(host = "localhost", port = 8080)
 
 unfiltered.jetty.Server.portBinding(binding).plan(
   App(JimsAuth)
-).run
+).run()
 // #example2
 
 }

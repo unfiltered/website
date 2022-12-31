@@ -39,7 +39,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
       for {
         in <- data.as.BigInt ~> required named "in"
       } yield ResponseString(
-        in % 10 + "\n"
+        (in % 10).toString + "\n"
       )
   } }
 ).run()
@@ -55,7 +55,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
           BadRequest ~> ResponseString(s"'$v' is not a valid int for $k\n")
         ) ~> required named "in"
       } yield ResponseString(
-        in % 10 + "\n"
+        (in % 10).toString + "\n"
       )
   } }
 ).run()

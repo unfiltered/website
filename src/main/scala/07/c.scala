@@ -25,7 +25,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
         a <- intValue named "a"
         b <- intValue named "b"
       } yield ResponseString(
-        (a ++ b).sum + "n"
+        (a ++ b).sum.toString + "n"
       )
   } }
 ).run()
@@ -54,7 +54,7 @@ unfiltered.jetty.Server.portBinding(binding).plan(
         a <- data.as.Option[Int] named "a"
         b <- data.as.Option[Int] named "b"
       } yield ResponseString(
-        (a ++ b).sum + "\n"
+        (a ++ b).sum.toString + "\n"
       )
   } }
 ).run()
