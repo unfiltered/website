@@ -19,11 +19,11 @@ to generate error responses in a consistent way. This allows you to
 factor out the status code generation and to put error messages in
 context. One way to do this is with a case class.
 
-@@snip [ ](../../main/scala/07/e.scala) { #example1 }
+@@snip [ ](../../scala/07/e.scala) { #example1 }
 
 We could use this class with a "required" function.
 
-@@snip [ ](../../main/scala/07/e.scala) { #example2 }
+@@snip [ ](../../scala/07/e.scala) { #example2 }
 
 This cuts out a bit of boiler plate, but things get more interesting
 when we define a smarter case class.
@@ -34,7 +34,7 @@ If we want Unfiltered to combine error responses from multiple
 directives, we need to specify exactly how that should work. This can
 be done with a simple variation of the case class defined above.
 
-@@snip [ ](../../main/scala/07/e.scala) { #example3 }
+@@snip [ ](../../scala/07/e.scala) { #example3 }
 
 Instances of this class are still defined for a single error message
 `msg`, but they know how to format a response for multiple messages of
@@ -53,7 +53,7 @@ instances.
 
 We can redefine "required" with this improved error responder.
 
-@@snip [ ](../../main/scala/07/e.scala) { #example4 }
+@@snip [ ](../../scala/07/e.scala) { #example4 }
 
 ### Joining and Splitting Directives
 
@@ -61,7 +61,7 @@ Now that we have joinable error responses issued from our required
 interpreter, we can use the `&` method of `Directive` to join them, as
 well as an unapply method of `unfiltered.request.&` to split them.
 
-@@snip [ ](../../main/scala/07/e.scala) { #example5 }
+@@snip [ ](../../scala/07/e.scala) { #example5 }
 
 In a failure case, the errors objects are combined and returned on
 separate lines. On success, the combined directive produces nested

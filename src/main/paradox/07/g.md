@@ -52,7 +52,7 @@ of this documentation. Feel free to play around with the template
 project source though, that's what it's there for.
 @@@
 
-@@snip [ ](../../main/scala/07/g.scala) { #example1 }
+@@snip [ ](../../scala/07/g.scala) { #example1 }
 
 Also worth noting is that we defined our `BadParam` case class inside
 the match expression, since it needs a reference to `params` to build
@@ -66,17 +66,17 @@ parameter -- an empty string. Since this will be a common user error,
 we should handle it much like we would if the parameter were not
 submitted at all.
 
-@@snip [ ](../../main/scala/07/g.scala) { #example2 }
+@@snip [ ](../../scala/07/g.scala) { #example2 }
 
 But of course, we still need to define a `required` function since it
 is possible that some client will fail to submit a parameter.
 
-@@snip [ ](../../main/scala/07/g.scala) { #example3 }
+@@snip [ ](../../scala/07/g.scala) { #example3 }
 
 Finally, in this case the code keeps the logic of the conditional
 interpreter separate from the implementation, which is inline.
 
-@@snip [ ](../../main/scala/07/g.scala) { #example4 }
+@@snip [ ](../../scala/07/g.scala) { #example4 }
 
 This is just to show the variety of what's possible, it's up to you to
 decide how to organize and apply your own interpreters. Good luck, and

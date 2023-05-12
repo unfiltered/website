@@ -8,11 +8,11 @@ information about a user's session? That's where
 
 Let's build on our authenticated application and add support for simple cookie handling.
 
-@@snip [ ](../../main/scala/09/b.scala) { #example1 }
+@@snip [ ](../../scala/09/b.scala) { #example1 }
 
 Now that we have a slightly more sophisitcated basic application let's mount it with a user named `jim` and a password of `j@m`.
 
-@@snip [ ](../../main/scala/09/b.scala) { #example2 }
+@@snip [ ](../../scala/09/b.scala) { #example2 }
 
 In your browser, open the url `http://localhost:8080/` and you should
 be greeted with its native authentication dialog. Enter `jim` and

@@ -18,7 +18,7 @@ level of abstraction over the core library.
 You can define a directive function using familiar request
 extractors. Let's start with a raw intent function.
 
-@@snip [ ](../../main/scala/07/a.scala) { #example1 }
+@@snip [ ](../../scala/07/a.scala) { #example1 }
 
 You can use curl to inspect the different responses:
 
@@ -30,7 +30,7 @@ curl -v http://localhost:8080/
 The 404 response page to the second request is not so great. With
 directives, we'll do better than that *by default*.
 
-@@snip [ ](../../main/scala/07/a.scala) { #example2 }
+@@snip [ ](../../scala/07/a.scala) { #example2 }
 
 And with that you'll see a 406 Not Acceptable response when appropriate.
 
@@ -50,7 +50,7 @@ You may have noticed that directives transfer (and enrich) routing
 logic from extractors. If your extractors are reduced to the task of
 matching against paths alone, you can even eliminate those.
 
-@@snip [ ](../../main/scala/07/a.scala) { #example3 }
+@@snip [ ](../../scala/07/a.scala) { #example3 }
 
 It looks pretty different, but remember that here still composes to a
 standard Unfiltered intent function.

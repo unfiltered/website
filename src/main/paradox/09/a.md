@@ -14,11 +14,11 @@ basic HTTP authentication and verifies those credentials before
 letting anyone through the gate. It presumes a `Users` service that
 would validate the user's credentials.
 
-@@snip [ ](../../main/scala/09/a.scala) { #example1 }
+@@snip [ ](../../scala/09/a.scala) { #example1 }
 
 By applying this kit we can layer basic authentication around any
 intent in a client application.
 
-@@snip [ ](../../main/scala/09/a.scala) { #example2 }
+@@snip [ ](../../scala/09/a.scala) { #example2 }
 
 Also, don't give the password to any newspaper reporters.

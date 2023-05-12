@@ -8,7 +8,7 @@ scalaVersion := "2.13.10"
 
 git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
-com.typesafe.sbt.SbtGit.GitKeys.gitBranch := Some("master")
+com.github.sbt.git.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("https://www.opensource.org/licenses/MIT"))
 

@@ -24,7 +24,7 @@ function chain provided by the intent.
 This part is already done for you in `unfiltered-libary`, but in case
 you are curious this is how the GZip kit is defined.
 
-@@snip [ ](../../main/scala/08/b.scala) { #example1 }
+@@snip [ ](../../scala/08/b.scala) { #example1 }
 
 Unlike a plan's intent function, this one defines the conditions for
 which its response function is prepended another intent's. It sets
@@ -35,7 +35,7 @@ a header and a `FilterOutputStream` for the response.
 This is a very simple plan that will compress its responses if the
 user-agent supports it:
 
-@@snip [ ](../../main/scala/08/b.scala) { #example2 }
+@@snip [ ](../../scala/08/b.scala) { #example2 }
 
 ### Do Kit Yourself
 
