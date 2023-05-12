@@ -8,7 +8,7 @@ parameter of one method that expects an integer. Instead of defining
 interpreters inline, as in previous examples, you can define a general
 interpreter once and use it many places.
 
-@@snip [ ](../../main/scala/07/c.scala) { #example1 }
+@@snip [ ](../../scala/07/c.scala) { #example1 }
 
 In the example above we explicitly reference and apply a single
 interpreter to parameters "a" and "b", responding with their sum.
@@ -28,7 +28,7 @@ using interpreters often and in different applications, naming and
 recalling names for various types could become tedious. Let's try it
 with an implicit.
 
-@@snip [ ](../../main/scala/07/c.scala) { #example2 }
+@@snip [ ](../../scala/07/c.scala) { #example2 }
 
 The first thing you may notice is that `implyIntValue` is a bit
 wordier than its predecessor. An implicit interpreter used for request

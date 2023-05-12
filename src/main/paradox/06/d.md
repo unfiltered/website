@@ -7,13 +7,13 @@ Using the request matchers and response functions outlined over the
 last couple of pages, we have everything we need to build a naive
 key-value store.
 
-@@snip [ ](../../main/scala/06/d.scala) { #example1 }
+@@snip [ ](../../scala/06/d.scala) { #example1 }
 
 Go ahead and paste that into a @ref:[console](../01.md). Then,
 execute the plan with a server, adjusting the port if your system does
 not have 8080 available.
 
-@@snip [ ](../../main/scala/06/d.scala) { #example2 }
+@@snip [ ](../../scala/06/d.scala) { #example2 }
 
 The method `local`, like `anylocal`, binds only to the loopback
 interface, for safety. SillyStore is not quite "web-scale".

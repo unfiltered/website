@@ -13,7 +13,7 @@ different values. Unfiltered's base model for parameters is therefore
 a string key to a sequence of string values in the order they were
 supplied. This is easy to obtain in a directive.
 
-@@snip [ ](../../main/scala/07/b.scala) { #example1 }
+@@snip [ ](../../scala/07/b.scala) { #example1 }
 
 You can try this service with multiple, one, or no parameters.
 
@@ -32,11 +32,11 @@ typically, we do have requirements on our input.
 
 Things get more interesting when require parameters to be in a
 particular format. From here on out, we'll be working with
-*interpreters* in the @extref[`unfiltered.directives.data`](unidoc:unfiltered/directives/data/index)
+*interpreters* in the `unfiltered.directives.data`
 package. Interpreters define abstract operations on data; we can
 produce directives for a particular request parameter with `named`.
 
-@@snip [ ](../../main/scala/07/b.scala) { #example2 }
+@@snip [ ](../../scala/07/b.scala) { #example2 }
 
 By testing this service you'll find that all requests to the root path
 are accepted, and that the `in` value is bound to an `Option[Int]`. If
@@ -56,7 +56,7 @@ We can transform an interpreter that ignores failed interpretation
 into one that produces a failure response by passing an error handler
 to its `fail` method.
 
-@@snip [ ](../../main/scala/07/b.scala) { #example3 }
+@@snip [ ](../../scala/07/b.scala) { #example3 }
 
 The error handling function receives both the parameter name and given
 value as parameters. This way, a directive used for more than one

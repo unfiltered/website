@@ -18,7 +18,7 @@ repositories are a little wonky, so cross your fingers.
 
 Once you do get to a console, this should just work:
 
-@@snip [ ](../../main/scala/10/a.scala) { #example1 }
+@@snip [ ](../../scala/10/a.scala) { #example1 }
 
 Direct a web browser to [http://127.0.0.1:8080/][local] and you'll
 be in *hello world* business.

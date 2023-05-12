@@ -11,7 +11,7 @@ Requests are commonly accompanied by named parameters, either in the
 [query]: https://en.wikipedia.org/wiki/Query_string
 [post]: https://en.wikipedia.org/wiki/POST_%28HTTP%29#Use_for_submitting_web_forms
 
-@@snip [ ](../../main/scala/06/b.scala) { #example1 }
+@@snip [ ](../../scala/06/b.scala) { #example1 }
 
 The type of `params` extracted is `Map[String, Seq[String]]`, with a
 default value of `Seq.empty`. With this interface, it is always safe
@@ -24,7 +24,7 @@ For example, the query string `?test&test=3&test` produces the
 sequence of strings `"", "3", ""`. You can check this yourself by
 querying the plan defined above:
 
-@@snip [ ](../../main/scala/06/b.scala) { #example2 }
+@@snip [ ](../../scala/06/b.scala) { #example2 }
 
 ### Routing by Parameter
 
@@ -36,14 +36,14 @@ need to nest a custom extractor inside `Params`. For this Unfiltered
 provides a `Params.Extract` base class:
 
 
-@@snip [ ](../../main/scala/06/b.scala) { #example3 }
+@@snip [ ](../../scala/06/b.scala) { #example3 }
 
 The above extractor will match on the first parameter named "test" in
 a request. If no parameters are named test, the pattern does not
 match. However, a named parameter with no value would match. We can
 exclude this possibility with a richer definition.
 
-@@snip [ ](../../main/scala/06/b.scala) { #example4 }
+@@snip [ ](../../scala/06/b.scala) { #example4 }
 
 The second parameter of the `Params.Extract` constructor is a function
 `Seq[String] => Option[B]`, with `B` being the type extracted. The
@@ -60,18 +60,18 @@ When a parameter transformation function fails, `None` is produced and
 the extractor does not match for the request. Knowing this, you can
 write your own transformation functions using `map` and `filter`.
 
-@@snip [ ](../../main/scala/06/b.scala) { #example5 }
+@@snip [ ](../../scala/06/b.scala) { #example5 }
 
 There's also a convenience function to simplify the definition of
 transformation *predicates*.
 
-@@snip [ ](../../main/scala/06/b.scala) { #example6 }
+@@snip [ ](../../scala/06/b.scala) { #example6 }
 
 Try it all out in this server, which returns 404 unless provided with
 a "pos" parameter that is a positive integer, and "neg" that is
 negative.
 
-@@snip [ ](../../main/scala/06/b.scala) { #example7 }
+@@snip [ ](../../scala/06/b.scala) { #example7 }
 
 @@@ note
 The `&` extractor matches when the extractor to its left and right

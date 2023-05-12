@@ -6,7 +6,7 @@ Thanks to one of the darker corners of the Scala type system
 
 ### Agnostic Intents
 
-@@snip [ ](../../main/scala/08/a.scala) { #example1 }
+@@snip [ ](../../scala/08/a.scala) { #example1 }
 
 The object `Hello` defines an intent with underlying request
 and response types of `Any`. As a result, the intent can not
@@ -19,7 +19,7 @@ works with any of them.
 The next step is to supply the same generic intent to different kinds
 of plans.
 
-@@snip [ ](../../main/scala/08/a.scala) { #example2 }
+@@snip [ ](../../scala/08/a.scala) { #example2 }
 
 As usual the plans are actual servlet filters or Netty handlers, so
 you could use them with a server you have configured separately or

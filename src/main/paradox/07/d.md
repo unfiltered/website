@@ -11,7 +11,7 @@ for required parameters.
 The failure to supply a required parameter must produce an application
 defined error response. We'll define a very simple one.
 
-@@snip [ ](../../main/scala/07/d.scala) { #example1 }
+@@snip [ ](../../scala/07/d.scala) { #example1 }
 
 The name of the function is not important when used implicitly, but
 call it `required` is a good convention since you may also want to use
@@ -23,7 +23,7 @@ With a required function in scope we can use it with any implicit
 interpreters also in scope. The `data.as.String` interpreter is
 imported from the `Directives` object, so we can use it immediately.
 
-@@snip [ ](../../main/scala/07/d.scala) { #example2 }
+@@snip [ ](../../scala/07/d.scala) { #example2 }
 
 Let's examine the output from this one with curl:
 
@@ -43,7 +43,7 @@ chained together in support of both optional and required parameters.
 Required is itself an interpreter which unboxes from the `Option`, so
 it generally must be the last interpreter in a chain.
 
-@@snip [ ](../../main/scala/07/d.scala) { #example3 }
+@@snip [ ](../../scala/07/d.scala) { #example3 }
 
 This service returns the last digit of the required provided
 integer. Since we didn't provide a `fail` handler for
@@ -60,7 +60,7 @@ in is missing
 To be more specific, we can supply a failure to the integer
 interpreter.
 
-@@snip [ ](../../main/scala/07/d.scala) { #example4 }
+@@snip [ ](../../scala/07/d.scala) { #example4 }
 
 Now each failure condition produces a distinct error.
 

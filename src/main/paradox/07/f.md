@@ -18,18 +18,18 @@ constrain input parameters, Unfiltered leaves it to you to define
 interpreters using the Scala language. Here, we'll define a simple one
 that accepts only even integers.
 
-@@snip [ ](../../main/scala/07/f.scala) { #example1 }
+@@snip [ ](../../scala/07/f.scala) { #example1 }
 
 As a conditional interpreter of integer, `evenInt` inputs and outputs
 an integer, failing with an error if it doesn't satisfy the
 condition. To make it work seamlessly with request parameters we may
 define an implicit integer interpreter.
 
-@@snip [ ](../../main/scala/07/f.scala) { #example2 }
+@@snip [ ](../../scala/07/f.scala) { #example2 }
 
 Then it's just a matter of using `evenInt` like any other interpreter.
 
-@@snip [ ](../../main/scala/07/f.scala) { #example3 }
+@@snip [ ](../../scala/07/f.scala) { #example3 }
 
 ### Fallible Interpreters
 
@@ -41,14 +41,14 @@ interpreters, under the assumption that any conversion may fail.
 You can make a fallible interpreter to any type. We'll demonstrate
 with a simple typed data store.
 
-@@snip [ ](../../main/scala/07/f.scala) { #example4 }
+@@snip [ ](../../scala/07/f.scala) { #example4 }
 
 The `data.Fallible` case class takes a function from its input type to
 an option of its output type; `Map#get` fits the bill perfectly. Then
 we defined a complete, error-capable interpreter so that it's easy and
 clean to turn input parameters into tools.
 
-@@snip [ ](../../main/scala/07/f.scala) { #example5 }
+@@snip [ ](../../scala/07/f.scala) { #example5 }
 
 Let's see how it works:
 

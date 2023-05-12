@@ -9,8 +9,6 @@ Unfiltered
 This documentation walks through basic functionality of the
 library. You may also want to refer to Unfiltered's
 
-@extref[scaladocs](unidoc:unfiltered/index)
-
 @@@ index
 
 * [ ](01.md)
