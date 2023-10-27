@@ -7,9 +7,9 @@ import unfiltered.jetty.ContextAdder
 
 unfiltered.jetty.Server.http(8080).
   context("/client"){ (ctx: ContextAdder) =>
-    ctx.resources(new java.net.URL(
+    ctx.resources(new java.net.URI(
       """file:../client"""
-    )).allowAliases(true)
+    ).toURL).allowAliases(true)
   }.plan(myPlan).run()
 // #example1
 
