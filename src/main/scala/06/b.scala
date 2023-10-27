@@ -31,7 +31,7 @@ object NonEmptyTest extends Params.Extract(
 // #example5
 object NotShortTest extends Params.Extract(
   "test",
-  Params.first ~> { p: Option[String] =>
+  Params.first ~> { (p: Option[String]) =>
     p.filter { _.length > 4 }
   }
 )

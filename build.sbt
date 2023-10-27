@@ -45,8 +45,15 @@ libraryDependencies ++= Seq(
 
 paradoxTheme := Some(builtinParadoxTheme("generic"))
 
-scalacOptions ++=
-  Seq("-Xcheckinit", "-encoding", "utf8", "-deprecation", "-unchecked", "-feature")
+scalacOptions ++= Seq(
+  "-Xcheckinit",
+  "-encoding",
+  "utf8",
+  "-deprecation",
+  "-unchecked",
+  "-feature",
+  "-Xsource:3",
+)
 
 val unusedWarnings = (
   "-Ywarn-unused:imports" ::

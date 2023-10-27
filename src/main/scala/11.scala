@@ -6,7 +6,7 @@ def myPlan: jakarta.servlet.Filter = ???
 import unfiltered.jetty.ContextAdder
 
 unfiltered.jetty.Server.http(8080).
-  context("/client"){ ctx: ContextAdder =>
+  context("/client"){ (ctx: ContextAdder) =>
     ctx.resources(new java.net.URL(
       """file:../client"""
     )).allowAliases(true)
