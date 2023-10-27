@@ -37,7 +37,7 @@ locally {
 
 import unfiltered.request._
 import unfiltered.response._
-import unfiltered.directives._, Directives._
+import unfiltered.directives._
 
 // #example2
 implicit val implyIntValue =

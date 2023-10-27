@@ -5,7 +5,8 @@ object f {
 // #example1
 import unfiltered.request._
 import unfiltered.response._
-import unfiltered.directives._, Directives._
+import unfiltered.directives._
+import unfiltered.directives.data.Interpreter
 
 def badParam(msg: String) =
   BadRequest ~> ResponseString(msg)
@@ -17,7 +18,7 @@ val evenInt = data.Conditional[Int](_ % 2 == 0).fail(
 
 
 // #example2
-implicit val intValue =
+implicit val intValue: Interpreter[Seq[String], Option[Int], ResponseFunction[Any]] =
   data.as.String ~> data.as.Int.fail(
     (k, v) => badParam("not an int: " + v)
   )
@@ -52,7 +53,7 @@ val toolStore = Map(
 
 val asTool = data.Fallible[Int,Tool](toolStore.get)
 
-implicit def implyTool =
+implicit def implyTool: Interpreter[Seq[String], Option[Tool], ResponseFunction[Any]] =
   data.as.String ~> data.as.Int ~> asTool.fail(
     (k, v) => badParam(s"'$v' is not a valid tool identifier")
   )

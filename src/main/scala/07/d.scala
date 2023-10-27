@@ -10,10 +10,12 @@ val binding = SocketPortBinding(host = "localhost", port = 8080)
 import unfiltered.request._
 import unfiltered.response._
 import unfiltered.directives._, Directives._
+import unfiltered.directives.data.Requiring
 
-implicit def required[T] = data.Requiring[T].fail(name =>
-  BadRequest ~> ResponseString(name + " is missing\n")
-)
+implicit def required[T]: Requiring[T, ResponseFunction[Any]] =
+  data.Requiring[T].fail(name =>
+    BadRequest ~> ResponseString(name + " is missing\n")
+  )
 // #example1
 
 

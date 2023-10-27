@@ -6,6 +6,7 @@ object e {
 import unfiltered.request._
 import unfiltered.response._
 import unfiltered.directives._, Directives._
+import unfiltered.directives.data.Requiring
 
 case class OneBadParam(msg: String) extends Responder[Any] {
   def respond(res: HttpResponse[Any]): Unit =
@@ -16,7 +17,7 @@ case class OneBadParam(msg: String) extends Responder[Any] {
 
 locally {
 // #example2
-implicit def required[T] = data.Requiring[T].fail(name =>
+implicit def required[T]: Requiring[T, ResponseFunction[Any]] = data.Requiring[T].fail(name =>
   OneBadParam(name + " is missing")
 )
 // #example2
@@ -33,7 +34,7 @@ case class BadParam(msg: String) extends ResponseJoiner(msg)(
 
 
 // #example4
-implicit def required[T] = data.Requiring[T].fail(name =>
+implicit def required[T]: Requiring[T, BadParam] = data.Requiring[T].fail(name =>
   BadParam(name + " is missing")
 )
 // #example4
