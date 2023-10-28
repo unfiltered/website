@@ -2,6 +2,7 @@ package example07
 
 import unfiltered.request._
 import unfiltered.directives._, Directives._
+import unfiltered.directives.data.Requiring
 
 object g {
 
@@ -30,9 +31,10 @@ val inputString = data.as.String ~>
 
 
 // #example3
-implicit def required[T] = data.Requiring[T].fail(name =>
-  BadParam(name + " is missing")
-)
+implicit def required[T]: Requiring[T, BadParam] =
+  data.Requiring[T].fail(name =>
+    BadParam(name + " is missing")
+  )
 // #example3
 
 
