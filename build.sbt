@@ -26,7 +26,7 @@ Paradox / paradoxProperties ++= Map(
   }
 )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.17"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18"
 
 libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % "always"
 
