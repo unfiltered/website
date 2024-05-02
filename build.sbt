@@ -4,7 +4,7 @@ enablePlugins(ParadoxSitePlugin)
 
 enablePlugins(GhpagesPlugin)
 
-scalaVersion := "2.13.13"
+scalaVersion := "2.13.14"
 
 git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
