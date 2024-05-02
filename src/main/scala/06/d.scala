@@ -10,7 +10,7 @@ object SillyStore extends unfiltered.filter.Plan {
   def intent = {
     case req @ Path(Seg("record" :: id :: Nil)) => req match {
       case GET(_) =>
-        store.get(id).map(ResponseBytes).getOrElse {
+        store.get(id).map(ResponseBytes.apply).getOrElse {
           NotFound ~> ResponseString("No record: " + id)
         }
       case PUT(_) =>
