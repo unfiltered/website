@@ -4,7 +4,7 @@ enablePlugins(ParadoxSitePlugin)
 
 enablePlugins(GhpagesPlugin)
 
-scalaVersion := "2.13.18"
+scalaVersion := "3.8.2-RC1"
 
 git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
 
@@ -46,18 +46,15 @@ libraryDependencies ++= Seq(
 paradoxTheme := Some(builtinParadoxTheme("generic"))
 
 scalacOptions ++= Seq(
-  "-Xcheckinit",
   "-encoding",
   "utf8",
   "-deprecation",
   "-unchecked",
   "-feature",
-  "-Xsource:3",
 )
 
-val unusedWarnings = (
-  "-Ywarn-unused:imports" ::
-  Nil
+val unusedWarnings = Seq(
+  "-Wunused:imports",
 )
 
 scalacOptions ++= unusedWarnings

@@ -54,22 +54,3 @@ instances.
 We can redefine "required" with this improved error responder.
 
 @@snip [ ](../../scala/07/e.scala) { #example4 }
-
-### Joining and Splitting Directives
-
-Now that we have joinable error responses issued from our required
-interpreter, we can use the `&` method of `Directive` to join them, as
-well as an unapply method of `unfiltered.request.&` to split them.
-
-@@snip [ ](../../scala/07/e.scala) { #example5 }
-
-In a failure case, the errors objects are combined and returned on
-separate lines. On success, the combined directive produces nested
-tuples of the success cases which `&` extracts in the order produced.
-
-```sh
-$ curl http://127.0.0.1:8080/
-a is missing
-b is missing
-c is missing
-```
