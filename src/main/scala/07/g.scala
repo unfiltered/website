@@ -22,29 +22,29 @@ new unfiltered.filter.Planify({
 
 
 // #example2
-val inputString = data.as.String ~>
-  data.as.String.trimmed ~>
-  data.as.String.nonEmpty.fail(
-    (key, _) => BadParam(s"$key is empty")
-  )
+    val inputString = data.as.String ~>
+      data.as.String.trimmed ~>
+      data.as.String.nonEmpty.fail(
+        (key, _) => BadParam(s"$key is empty")
+      )
 // #example2
 
 
 // #example3
-implicit def required[T]: Requiring[T, BadParam] =
-  data.Requiring[T].fail(name =>
-    BadParam(name + " is missing")
-  )
+    implicit def required[T]: Requiring[T, BadParam] =
+      data.Requiring[T].fail(name =>
+        BadParam(name + " is missing")
+      )
 // #example3
 
 
 // #example4
-(inputString ~> data.Conditional(palindrome).fail(
-  (_, value) => BadParam(s"'$value' is not a palindrome")
-) ~> required named "palindrome")
+    (inputString ~> data.Conditional(palindrome).fail(
+      (_, value) => BadParam(s"'$value' is not a palindrome")
+    ) ~> required named "palindrome")
 
-def palindrome(s: String) =
-  s.toLowerCase.reverse == s.toLowerCase
+    def palindrome(s: String) =
+      s.toLowerCase.reverse == s.toLowerCase
 // #example4
     ???
 })
