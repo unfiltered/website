@@ -18,12 +18,6 @@ version := unfilteredVersion
 
 Paradox / paradoxProperties ++= Map(
   "version" -> unfilteredVersion,
-  "extref.unidoc.base_url" -> {
-    // can't use @scaladoc due to https://github.com/lightbend/paradox/pull/77
-    val sonatype = "https://oss.sonatype.org/service/local/repositories/releases/archive"
-    val artifactId = "unfiltered-all_2.13"
-    s"${sonatype}/ws/unfiltered/${artifactId}/${unfilteredVersion}/${artifactId}-${unfilteredVersion}-javadoc.jar/!/%s.html"
-  }
 )
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19"
