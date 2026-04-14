@@ -20,14 +20,20 @@ jobs:
     - run: sbt -v --server compile paradox
     - run: sudo apt-get install tree
     - run: tree target
+    - id: generate_token
+      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
+      uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+      with:
+        app-id: 89698
+        private-key: ${{ secrets.UNFILTERED_APP_KEY }}
+        repositories: |
+          unfiltered.github.io
     - uses: actions/checkout@v6
+      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
         repository: unfiltered/unfiltered.github.io
         path: unfiltered.github.io
-    - uses: webfactory/ssh-agent@v0.10.0
-      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
-      with:
-        ssh-private-key: ${{ secrets.DEPLOY_KEY_1 }}
+        token: ${{ steps.generate_token.outputs.token }}
     - name: Push to gh-pages
       if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       run: |
