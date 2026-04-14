@@ -1,14 +1,6 @@
 enablePlugins(ParadoxPlugin)
 
-enablePlugins(ParadoxSitePlugin)
-
-enablePlugins(GhpagesPlugin)
-
 scalaVersion := "3.8.3"
-
-git.remoteRepo := "git@github.com:unfiltered/unfiltered.github.io.git"
-
-com.github.sbt.git.SbtGit.GitKeys.gitBranch := Some("master")
 
 licenses := Seq("MIT" -> url("https://www.opensource.org/licenses/MIT"))
 
@@ -16,7 +8,7 @@ def unfilteredVersion = "0.12.1"
 
 version := unfilteredVersion
 
-Paradox / paradoxProperties ++= Map(
+paradoxProperties ++= Map(
   "version" -> unfilteredVersion,
 )
 
