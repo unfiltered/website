@@ -12,7 +12,10 @@ paradoxProperties ++= Map(
   "version" -> unfilteredVersion,
 )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.20"
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest-featurespec" % "3.2.20",
+  "org.scalatest" %% "scalatest-shouldmatchers" % "3.2.20",
+)
 
 libraryDependencies ++= Seq(
   "netty-uploads",
