@@ -10,6 +10,7 @@ version := unfilteredVersion
 
 paradoxProperties ++= Map(
   "version" -> unfilteredVersion,
+  "github.base_url" -> "https://github.com/unfiltered/website/",
 )
 
 libraryDependencies ++= Seq(
