@@ -28,6 +28,7 @@ jobs:
         private-key: ${{ secrets.UNFILTERED_APP_KEY }}
         repositories: |
           unfiltered.github.io
+    - run: find . -type f -name "*.lfs" -o -name "*.gitattributes" | xargs rm -f
     - uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
       if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
