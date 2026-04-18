@@ -4,9 +4,12 @@ object d {
 // #example1
 import unfiltered.request._
 import unfiltered.response._
+import scala.collection.concurrent.TrieMap
 
 object SillyStore extends unfiltered.filter.Plan {
-  @volatile private var store = Map.empty[String, Array[Byte]]
+  private val store: TrieMap[String, Array[Byte]] =
+    TrieMap.empty[String, Array[Byte]]
+
   def intent = {
     case req @ Path(Seg("record" :: id :: Nil)) => req match {
       case GET(_) =>
@@ -14,9 +17,7 @@ object SillyStore extends unfiltered.filter.Plan {
           NotFound ~> ResponseString("No record: " + id)
         }
       case PUT(_) =>
-        SillyStore.synchronized {
-          store = store + (id -> Body.bytes(req))
-        }
+        store += (id -> Body.bytes(req))
         Created ~> ResponseString("Created record: " + id)
       case _ =>
         MethodNotAllowed ~> ResponseString("Must be GET or PUT")
