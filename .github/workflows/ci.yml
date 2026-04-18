@@ -28,19 +28,10 @@ jobs:
         private-key: ${{ secrets.UNFILTERED_APP_KEY }}
         repositories: |
           unfiltered.github.io
-    - uses: actions/checkout@v6
+    - uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
       if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
       with:
-        repository: unfiltered/unfiltered.github.io
-        path: unfiltered.github.io
         token: ${{ steps.generate_token.outputs.token }}
-    - name: Push to gh-pages
-      if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
-      run: |
-        git config --global user.email "74865306+unfiltered-app[bot]@users.noreply.github.com"
-        git config --global user.name "unfiltered-app[bot]"
-        cp -r target/paradox/site/main/* unfiltered.github.io/
-        cd unfiltered.github.io
-        git add .
-        git commit -am "auto commit on CI https://github.com/unfiltered/website/commit/${{ github.sha }}"
-        git push origin master
+        branch: master
+        folder: target/paradox/site/main
+        repository-name: unfiltered/unfiltered.github.io
