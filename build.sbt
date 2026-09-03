@@ -1,6 +1,6 @@
 enablePlugins(ParadoxPlugin)
 
-scalaVersion := "3.8.4"
+scalaVersion := "3.9.0"
 
 licenses := Seq("MIT" -> url("https://www.opensource.org/licenses/MIT"))
 
