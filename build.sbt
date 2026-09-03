@@ -2,7 +2,7 @@ enablePlugins(ParadoxPlugin)
 
 scalaVersion := "3.9.0"
 
-licenses := Seq("MIT" -> url("https://www.opensource.org/licenses/MIT"))
+licenses := Seq("MIT" -> uri("https://www.opensource.org/licenses/MIT"))
 
 def unfilteredVersion = "0.12.1"
 
